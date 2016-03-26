@@ -1,0 +1,41 @@
+    <h1><i class="fa fa-user"></i> Alumno</h1>
+    <h4>{{ alumno.nombre }}</h4>
+    <hr>
+
+    <div class="row">
+
+        <form ng-submit="guadarAlumno()">
+
+            <div ng-hide="creando">
+                Código:
+                <br>
+                <input type="text" class="form-control" ng-model="alumno.codigo" readonly="readonly">
+                <br>
+            </div>
+
+
+            Nombre:
+            <br>
+            <input type="text" class="form-control" ng-model="alumno.nombre" placeholder="Nombre del alumno" required>
+            <br>
+
+            Teléfono:
+            <br>
+            <input type="text" class="form-control" ng-model="alumno.telefono" ui-mask="{{ telefonoMask }}" required>
+            <br>
+
+            Dirección:
+            <br>
+            <textarea class="form-control" ng-model="alumno.direccion" rows="5" placeholder="Dirección del alumno" required></textarea>
+            <br>
+
+            <button type="submit" class="btn btn-primary">
+                <i class="fa fa-floppy-o"></i>
+                Guardar</button>
+            <br><br>
+
+            <p class="text-success animated fadeIn fast" ng-show="actualizado">Registro actualizado</p>   <!-- Solo se renderiza si actualizado=true -->
+
+        </form>
+
+    </div>

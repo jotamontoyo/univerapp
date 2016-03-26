@@ -1,0 +1,21 @@
+<h1>Profesores</h1>
+<p>
+	Esta es la página de profesores
+</p>
+
+<div class="row">
+
+	<table class="table table-striped">
+		<tr>
+			<th>Nombre</th>
+		</tr>
+		<tr ng-repeat="nombre in personas | limitTo:inicio | limitTo:-5">		<!-- con estos filtros controlamos no pasarnos del mínimo o máximo de registros cuando pulsamos los botones Anteriores o Siguientes -->
+			<td>{{ nombre }}</td>
+		</tr>
+	</table>
+
+	<br>
+	<button class="btn btn-primary" ng-click="anteriores()">Anteriores</button>
+	<button class="btn btn-primary" ng-click="siguientes()">Siguientes</button>
+
+</div>
